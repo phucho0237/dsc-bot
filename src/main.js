@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Events } = require("discord.js");
+const { Client, GatewayIntentBits, Collection, Events } = require("discord.js");
 
 const config = require("./config");
 
@@ -9,6 +9,8 @@ const client = new Client({
       GatewayIntentBits.GuildMessages
    ]
 });
+
+client.commands = new Collection();
 
 client.once(Events.ClientReady, c => {
    console.log(`[CLIENT] - Logged in as ${c.user.tag} (ID: ${c.user.id})`);
