@@ -14,7 +14,7 @@ module.exports = client => {
          .filter(f => f.endsWith(".js"));
 
       for (const file of commandFiles) {
-         const command = require(`../commands/${dir}/${file}`);
+         const command = require(`../commands/${folder}/${file}`);
 
          commandsArray.push(command.data.toJSON());
       }
@@ -29,12 +29,12 @@ module.exports = client => {
          );
 
          const data = await rest.put(
-            Routes.applicationCommands(config.bot.token),
-            { body: { commandsArray } }
+            Routes.applicationCommands(config.bot.clientId),
+            { body: commandsArray }
          );
 
          console.log(
-            `Successfully reloaded ${data.length} application (/) commands`
+            `[COMMAND] - Successfully reloaded ${data.length} application (/) commands`
          );
       } catch (err) {
          console.error(err);
