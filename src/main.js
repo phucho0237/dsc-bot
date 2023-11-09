@@ -12,7 +12,7 @@ const client = new Client({
 
 client.commands = new Collection();
 
-["commands", "events"].forEach(handler =>
+["events", "commands"].forEach(handler =>
    require(`./handlers/${handler}`)(client)
 );
 
