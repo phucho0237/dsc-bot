@@ -16,4 +16,6 @@ client.once(Events.ClientReady, c => {
    console.log(`[CLIENT] - Logged in as ${c.user.tag} (ID: ${c.user.id})`);
 });
 
+["commands"].forEach(handler => require(`./handlers/${handler}`)(client));
+
 client.login(config.bot.token);
