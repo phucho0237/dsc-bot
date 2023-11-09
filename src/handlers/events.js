@@ -1,6 +1,8 @@
 const fs = require("fs");
 
 module.exports = client => {
+   let eventsArray = [];
+
    const eventFolders = fs.readdirSync("./src/events");
 
    for (const folder of eventFolders) {
@@ -16,6 +18,10 @@ module.exports = client => {
          } else {
             client.on(event.name, (...args) => event.execute(...args));
          }
+
+         eventsArray.push(event.name);
       }
    }
+
+   console.log(`[EVENT] - Refreshed ${eventsArray.length} event(s)`);
 };

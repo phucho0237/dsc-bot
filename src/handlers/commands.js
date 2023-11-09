@@ -4,7 +4,7 @@ const { REST, Routes } = require("discord.js");
 const config = require("../config");
 
 module.exports = client => {
-   const commandsArray = [];
+   let commandsArray = [];
 
    const commandFolders = fs.readdirSync("./src/commands");
 
@@ -26,18 +26,12 @@ module.exports = client => {
 
    (async () => {
       try {
-         console.log(
-            `[COMMAND] - Started refreshing ${commandsArray.length} application (/) commands`
-         );
-
          const data = await rest.put(
             Routes.applicationCommands(config.bot.clientId),
             { body: commandsArray }
          );
 
-         console.log(
-            `[COMMAND] - Successfully reloaded ${data.length} application (/) commands`
-         );
+         console.log(`[COMMAND] - Refreshed ${data.length} command(s)`);
       } catch (err) {
          console.error(err);
       }
