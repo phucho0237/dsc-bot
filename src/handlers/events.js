@@ -1,4 +1,5 @@
 const fs = require("fs");
+const colors = require("colors");
 
 module.exports = client => {
    let eventsArray = [];
@@ -23,5 +24,5 @@ module.exports = client => {
       }
    }
 
-   console.log(`[EVENT] - Refreshed ${eventsArray.length} event(s)`);
+   console.log(`[EVENT] - Refreshed ${eventsArray.length} event(s)`.yellow);
 };

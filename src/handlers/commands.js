@@ -1,5 +1,6 @@
 const fs = require("fs");
 const { REST, Routes } = require("discord.js");
+const colors = require("colors");
 
 const config = require("../config");
 
@@ -31,7 +32,7 @@ module.exports = client => {
             { body: commandsArray }
          );
 
-         console.log(`[COMMAND] - Refreshed ${data.length} command(s)`);
+         console.log(`[COMMAND] - Refreshed ${data.length} command(s)`.yellow);
       } catch (err) {
          console.error(err);
       }
