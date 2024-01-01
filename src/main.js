@@ -18,9 +18,8 @@ const client = new Client({
    presence: {
       activities: [
          {
-            name: "from all of my heart",
-            type: ActivityType.Streaming,
-            url: "https://www.twitch.tv/chilledcat_music"
+            name: "/help",
+            type: ActivityType.Playing
          }
       ],
       status: "dnd"
