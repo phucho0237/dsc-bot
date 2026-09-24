@@ -1,23 +1,4 @@
 {
   "name": "dsc-bot",
-  "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/phucho0237/dsc-bot#readme",
-  "bugs": {
-    "url": "https://github.com/phucho0237/dsc-bot/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/phucho0237/dsc-bot.git"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Nhu Phuc",
-    "email": "phucho0237@gmail.com"
-  },
-  "type": "commonjs",
-  "main": "./src/main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "packageManager": "yarn@4.18.0"
 }
